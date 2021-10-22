@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { signIn } from '../actions/index'
 
 const Login = (props) => {
+    const dispatch=useDispatch()
     const [state, setState] = useState({
         password: '',
         email: ''
@@ -56,6 +59,10 @@ const Login = (props) => {
             if(response.ok){
                 let responseBody=await response.json()
                 if(responseBody.length>0){
+                    dispatch(signIn({
+                        currentUser:responseBody[0].username,
+                        userId :responseBody[0].id
+                    }))
                     props.history.replace('/dashbord')
                 }
             }

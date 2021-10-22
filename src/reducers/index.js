@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import Index from '../actions/Index'
+import { Auth } from "./auth";
 
 export default combineReducers({
-    ssdfg :Index
+    auth :Auth
 })

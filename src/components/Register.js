@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-
+import { useDispatch } from 'react-redux'
+import { signIn } from '../actions'
 const Register = (props) => {
+    const dispatch=useDispatch()
 
     const [state, setState] = useState({
         username: '',
@@ -77,10 +79,13 @@ const Register = (props) => {
                 headers : {"Content-type":"application/json"}
             })
             if(response.ok){
-                // let responseBody=await response.json()
-                console.log(props)
+                let responseBody=await response.json() 
+                console.log(responseBody)
+                dispatch(signIn({
+                    currentUser:responseBody.username,
+                    userId :responseBody.id
+                }))
                 props.history.replace('/dashbord')
-
             }
         }
     }

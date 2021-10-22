@@ -1,11 +1,11 @@
-import React from 'react'
-
-const Index = () => {
-    return (
-        <div>
-            df
-        </div>
-    )
+export const signIn =(item)=>{
+    return {
+        type : 'SIGN_IN',
+        payload:item
+    }
 }
-
-export default Index
+export const signOut =()=>{
+    return {
+        type : 'SIGN_OUT'
+    }
+}

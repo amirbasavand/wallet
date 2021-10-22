@@ -6,6 +6,46 @@
       "password": "123",
       "confirm": "123",
       "email": "amir@gmail.com"
+    },
+    {
+      "username": "reza",
+      "password": "123",
+      "confirm": "123",
+      "email": "reza@gmail.com",
+      "id": 2
+    },
+    {
+      "username": "ahmad",
+      "password": "123",
+      "confirm": "123",
+      "email": "ahmad@gmail.com",
+      "id": 3
+    }
+  ],
+  "contacts": [
+    {
+      "id": 11,
+      "userId": 1,
+      "name": "بساوند",
+      "number": "2436567"
+    },
+    {
+      "id": 12,
+      "userId": 1,
+      "name": "امیرحسین ",
+      "number": "0985445467"
+    },
+    {
+      "userId": 2,
+      "name": "mohamad",
+      "number": "0912488",
+      "id": 17
+    },
+    {
+      "userId": 2,
+      "name": "ali",
+      "number": "837759232",
+      "id": 18
     }
   ]
 }

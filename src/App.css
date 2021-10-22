@@ -58,3 +58,220 @@
     border: 2px solid blueviolet;
     border-radius: 5px;
 }
+/* dashbord */
+.container{
+    background-color: white;
+    /* padding: 10px; */
+    width: 95vw;
+    height: 85vh;
+    margin: 20px auto;
+    position: relative;
+    direction: rtl;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(5, 111, 197);
+    width: 15%;
+    height: 80%;
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    font-size: 1.2em;
+    color: rgb(252, 233, 233);
+}
+.sidebar_top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sidebar_item{
+    padding: .5em;
+    margin-top: 8px;
+    transition: all .2s linear;
+}
+.sidebar_item:hover{
+    margin-left: 1em;
+    border-right: 5px solid whitesmoke;
+    border-radius: 3px;
+    border-right-style: ridge;
+    cursor: pointer;
+}
+.sidebar_bot{
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+.sidebar_btn{
+    padding: 1em;
+    margin: 20px;
+}
+/* contacts */
+.contacts{
+    margin-top: 20px;
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    border-radius: 5px;
+    right: 200px;
+    box-shadow: 0px 0px 3px 0px #999;
+}
+.contact_search{
+    margin-bottom: 1em;
+    border-bottom: 1px solid #888;
+    position: relative;
+}
+.sign_search{
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    font-size: 1.3em;
+}
+
+.contact_search input{
+    right: 32px;
+    width: 85%;
+    border: none;
+    border-radius: 6px;
+    padding: 9px;
+    outline: none;
+    position: relative;
+}
+.contact_number{
+    margin: 3em 0;
+    border-bottom: 1px solid rgb(153, 151, 151);
+    padding: 1.5em;
+    position: relative;
+}
+.contact_number p{
+    margin-bottom: 1em;
+}
+.contact_number h4{
+    cursor: pointer;
+}
+.contact_number span{
+    position: absolute;
+    top:90%;
+    right: 0;
+    background-color: white;
+    padding: 0 10px;
+}
+.contact_list{
+    list-style: none;
+    margin-left: 1.5em;
+    padding: 20px;
+}
+.contact_item{
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+}
+.item_name{
+    position: absolute;
+    top:10px;
+    right: 50px;
+    color:#222;
+}
+.item_img{
+    font-size: 2.1em;
+}
+.add_contact{
+    margin-top: 20px;
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    border-radius: 5px;
+    right: 700px;
+    box-shadow: 0px 0px 3px 0px #999;
+    display: none;
+}
+.add_contact.active{
+    display: block;
+}
+.property_contact{
+    margin-top: 20px;
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    border-radius: 8px;
+    right: 700px;
+    box-shadow: 0px 0px 3px 0px #999;
+    display: none;
+}
+.active{
+    display: block;
+}
+.add_contact_title{
+    background-color: blue;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 1em;
+    border-top-left-radius:8px ;
+    border-top-right-radius:8px ;
+    color: seashell;
+}
+.form_add{
+    margin-top: 2em;
+    position: relative;
+}
+.form_add input{
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.form_add input:focus{
+    border: none;
+}
+.form_add p{
+    position: absolute;
+    bottom: 80%;
+    padding: 0  .8em;
+    letter-spacing: .1em;
+    font-size: 10px;
+    right: 5%;
+    background-color: white;
+}
+.form_add input:focus .form_add p{
+    color: navy;   
+}
+.form_edit{
+    margin-top: 3em;
+   text-align: center;
+}
+.form_edit button{
+    background-color: rgb(4, 43, 43);
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.profile_image{
+    text-align: center;
+    margin-top: 1em;
+    font-size: 3.5em;
+}
+.profile_name , .profile_number{
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1.3em;
+}
+.profile_btn{
+    display: flex;
+    margin: 1.5em auto;
+    justify-content: space-between;
+    width: 12em;
+}
+.profile_btn button{
+    padding: 1em 2em;
+    background-color: rgb(4, 43, 43);
+    color: snow;
+    border-radius: 5px;
+    border: none;
+}
+.profile_btn button:hover{
+    opacity: .9;
+    cursor: pointer;
+}
