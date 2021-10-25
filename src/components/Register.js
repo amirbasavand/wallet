@@ -26,24 +26,24 @@ const Register = (props) => {
         let errorData = {}
         errorData.username = []
         if (!state.username) {
-            errorData.username.push('username is blank')
+            errorData.username.push('نام کاربری را وارد کنید')
         }
         errorData.password = []
         if (!state.password) {
-            errorData.password.push('password is blank')
+            errorData.password.push('پسورد را وارد کنید')
         }
         errorData.confirm = []
         if (state.password !== state.confirm || !state.confirm) {
-            errorData.confirm.push('password is wrong')
+            errorData.confirm.push('پسورد اولیه را تایید کنید')
         }
         errorData.email = []
         if (!state.email) {
-            errorData.email.push('email is blank')
+            errorData.email.push('ایمیل را وارد کنید')
         }
         const validEmailRegex = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
         if (state.email) {
             if (!validEmailRegex.test(state.email)) {
-                errorData.email.push('proper email address is expected')
+                errorData.email.push('فرمت ایمیل را درست کنید')
             }
         }
         setErrors(errorData)

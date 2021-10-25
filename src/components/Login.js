@@ -20,16 +20,16 @@ const Login = (props) => {
         let errorData = {}
         errorData.password = []
         if (!state.password) {
-            errorData.password.push('password is blank')
+            errorData.password.push('پسورد را وارد کنید')
         }
         errorData.email = []
         if (!state.email) {
-            errorData.email.push('email is blank')
+            errorData.email.push('ایمیل را وارد کنید')
         }
         const validEmailRegex = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
         if (state.email) {
             if (!validEmailRegex.test(state.email)) {
-                errorData.email.push('proper email address is expected')
+                errorData.email.push('فرمت ایمیل درست نمی باشد')
             }
         }
         setErrors(errorData)
@@ -73,7 +73,7 @@ const Login = (props) => {
     return (
         <div className='container-form'>
             <form className='form-group' >
-                <h3 className='form-title'>Registration Form</h3>
+                <h3 className='form-title'>Login Form</h3>
                 <div className="form-item">
                     <label htmlFor="email">Email</label>
                     <input type="email"
@@ -98,7 +98,7 @@ const Login = (props) => {
                     />
                 </div>
                 <p style={{ color: 'red' }}>{dirty.password && errors['password'] ? errors.password : ''}</p>
-                <button className='form-button' onClick={(e) => onLoginClick(e)} >Register</button>
+                <button className='form-button' onClick={(e) => onLoginClick(e)} >Login</button>
             </form>
         </div>
     )

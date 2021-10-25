@@ -11,8 +11,8 @@ import Dashbord from './components/Dashbord';
 function App() {
   return (
     <BrowserRouter >
-      <Home />
-      <Route exact path='/login' component={Login} />
+      <Route exact path='/' component={Home} />
+      <Route path='/login' component={Login} />
       <Route path='/dashbord' component={Dashbord} />
       <Route path='/register' component={Register} />
     </BrowserRouter>
