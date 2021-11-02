@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { signIn } from '../actions'
 const Register = (props) => {
-    const dispatch=useDispatch()
+    const dispatch = useDispatch()
 
     const [state, setState] = useState({
         username: '',
@@ -76,14 +76,14 @@ const Register = (props) => {
                     confirm: state.confirm,
                     email: state.email
                 }),
-                headers : {"Content-type":"application/json"}
+                headers: { "Content-type": "application/json" }
             })
-            if(response.ok){
-                let responseBody=await response.json() 
+            if (response.ok) {
+                let responseBody = await response.json()
                 console.log(responseBody)
                 dispatch(signIn({
-                    currentUser:responseBody.username,
-                    userId :responseBody.id
+                    currentUser: responseBody.username,
+                    userId: responseBody.id
                 }))
                 props.history.replace('/dashbord')
             }
@@ -92,59 +92,61 @@ const Register = (props) => {
 
 
     return (
-        <div className='container-form'>
-            <form className='form-group' >
-                <h3 className='form-title'>Registration Form</h3>
-                <div className="form-item">
-                    <label htmlFor="username">UserName</label>
-                    <input type="text"
-                        placeholder='enter your name'
-                        name='username'
-                        id='username'
-                        value={state.username}
-                        onChange={(e) => setState({ ...state, [e.target.name]: e.target.value })}
-                        onBlur={(e) => setDirty({ ...dirty, [e.target.name]: true })}
-                    />
+        <div className='home'>
+            <div className='home_inner'>
+                <div>
+                    <div className="form-item">
+                        <p htmlFor="username">UserName</p>
+                        <input type="text"
+                            autoFocus='autoFocus'
+                            placeholder='enter your name'
+                            name='username'
+                            id='username'
+                            value={state.username}
+                            onChange={(e) => setState({ ...state, [e.target.name]: e.target.value })}
+                            onBlur={(e) => setDirty({ ...dirty, [e.target.name]: true })}
+                        />
+                        <p style={{ color: 'red' }}>{dirty.username && errors['username'] ? errors.username : ''}</p>
+                    </div>
+                    <div className="form-item">
+                        <p htmlFor="password">Password</p>
+                        <input type="password"
+                            placeholder='enter your password'
+                            name='password'
+                            id='password'
+                            value={state.password}
+                            onChange={(e) => setState({ ...state, [e.target.name]: e.target.value })}
+                            onBlur={(e) => setDirty({ ...dirty, [e.target.name]: true })}
+                        />
+                        <p style={{ color: 'red' }}>{dirty.password && errors['password'] ? errors.password : ''}</p>
+                    </div>
+                    <div className="form-item">
+                        <p htmlFor="confirm">Confirm Password</p>
+                        <input type="password"
+                            placeholder='enter your confirm password'
+                            name='confirm'
+                            id='confirm'
+                            value={state.confirm}
+                            onChange={(e) => setState({ ...state, [e.target.name]: e.target.value })}
+                            onBlur={(e) => setDirty({ ...dirty, [e.target.name]: true })}
+                        />
+                        <p style={{ color: 'red' }}>{dirty.confirm && errors['confirm'] ? errors.confirm : ''}</p>
+                    </div>
+                    <div className="form-item">
+                        <p htmlFor="email">Email</p>
+                        <input type="email"
+                            placeholder='enter your email'
+                            name='email'
+                            id='email'
+                            value={state.email}
+                            onChange={(e) => setState({ ...state, [e.target.name]: e.target.value })}
+                            onBlur={(e) => setDirty({ ...dirty, [e.target.name]: true })}
+                        />
+                        <p style={{ color: 'red' }}>{dirty.email && errors['email'] ? errors.email : ''}</p>
+                    </div>
                 </div>
-                <p style={{ color: 'red' }}>{dirty.username && errors['username'] ? errors.username : ''}</p>
-                <div className="form-item">
-                    <label htmlFor="password">Password</label>
-                    <input type="password"
-                        placeholder='enter your password'
-                        name='password'
-                        id='password'
-                        value={state.password}
-                        onChange={(e) => setState({ ...state, [e.target.name]: e.target.value })}
-                        onBlur={(e) => setDirty({ ...dirty, [e.target.name]: true })}
-                    />
-                </div>
-                <p style={{ color: 'red' }}>{dirty.password && errors['password'] ? errors.password : ''}</p>
-                <div className="form-item">
-                    <label htmlFor="confirm">Confirm Password</label>
-                    <input type="password"
-                        placeholder='enter your confirm password'
-                        name='confirm'
-                        id='confirm'
-                        value={state.confirm}
-                        onChange={(e) => setState({ ...state, [e.target.name]: e.target.value })}
-                        onBlur={(e) => setDirty({ ...dirty, [e.target.name]: true })}
-                    />
-                </div>
-                <p style={{ color: 'red' }}>{dirty.confirm && errors['confirm'] ? errors.confirm : ''}</p>
-                <div className="form-item">
-                    <label htmlFor="email">Email</label>
-                    <input type="email"
-                        placeholder='enter your email'
-                        name='email'
-                        id='email'
-                        value={state.email}
-                        onChange={(e) => setState({ ...state, [e.target.name]: e.target.value })}
-                        onBlur={(e) => setDirty({ ...dirty, [e.target.name]: true })}
-                    />
-                </div>
-                <p style={{ color: 'red' }}>{dirty.email && errors['email'] ? errors.email : ''}</p>
-                <button className='form-button' onClick={(e) => onRegisterClick(e)} >Register</button>
-            </form>
+                <button className='form-button' onClick={(e) => onRegisterClick(e)} >ثبت نام</button>
+            </div>
         </div>
     )
 }
