@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Addcontact = ({state,setState,addContact,removeActive}) => {
+const Addcontact = ({state,setState,addContact}) => {
  
     return (
         <>
