@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
-const Addcontact = ({state,setState,addContact,removeActive}) => {
-    // useEffect(()=>{
-    //     removeActive()
-    // },[])
+const Addcontact = ({state,setState,addContact}) => {
     return (
         <>
             <div className="add_contact">

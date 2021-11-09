@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { signIn } from '../actions'
+import { signIn } from '../actions/index.js'
 const Register = (props) => {
     const dispatch = useDispatch()
 
