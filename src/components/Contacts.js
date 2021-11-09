@@ -1,10 +1,11 @@
 import React from 'react'
 import { BsPersonCircle } from 'react-icons/bs'
 import { FiSearch } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 
 const Contacts = ({search,setSearch,contacts,addList,propertyContact}) => {
-   
+
 
     return (
         <>
@@ -24,7 +25,7 @@ const Contacts = ({search,setSearch,contacts,addList,propertyContact}) => {
                 </div>
                 <ul className="contact_list">
                     {contacts.map(cont => {
-                        return <li key={cont.id} className='contact_item' onClick={() => propertyContact(cont.id, cont.name, cont.number)} > <span className='item_img'><BsPersonCircle /></span> <span className='item_name'>{cont.name}</span> </li>
+                        return <li key={cont.id} className='contact_item' onClick={() => propertyContact(cont.id, cont.name, cont.number)} ><Link className='color_contacts' to={`/dashbord/contact/${cont.id}`}> <span className='item_img'><BsPersonCircle /></span> <span className='item_name'>{cont.name}</span></Link> </li>
                     })}
                 </ul>
             </div>

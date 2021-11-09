@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 /* home */
+.color_link{
+    color: whitesmoke;
+}
 .home{
      display: flex;
      justify-content: center;
@@ -279,6 +282,12 @@
 }
 .item_img{
     font-size: 2.1em;
+}
+.color_contacts:focus{
+    color: black;
+}
+.color_contacts{
+    color: black;
 }
 .add_contact{
     margin-top: 20px;

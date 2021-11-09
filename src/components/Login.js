@@ -53,19 +53,29 @@ const Login = (props) => {
         setDirty(dirtyData)
         validate()
         if (isValid()) {
-            let response = await fetch(`http://localhost:5000/users?email=${state.email}&password=${state.password}`, {
-                method: 'GET'
-            })
-            if (response.ok) {
-                let responseBody = await response.json()
-                if (responseBody.length > 0) {
-                    dispatch(signIn({
-                        currentUser: responseBody[0].username,
-                        userId: responseBody[0].id
-                    }))
-                    props.history.replace('/dashbord')
-                }
+            let response = JSON.parse(localStorage.getItem('users'))
+            let responseBody = response.find(item => item.email === state.email && item.password === state.password)
+            if (responseBody) {
+                dispatch(signIn({
+                    currentUser: responseBody.username,
+                    userId: responseBody.id
+                }))
+                props.history.replace('/dashbord')
             }
+
+            // let response = await fetch(`http://localhost:5000/users?email=${state.email}&password=${state.password}`, {
+            //     method: 'GET'
+            // })
+            // if (response.ok) {
+            //     let responseBody = await response.json()
+            //     if (responseBody.length > 0) {
+            //         dispatch(signIn({
+            //             currentUser: responseBody[0].username,
+            //             userId: responseBody[0].id
+            //         }))
+            //         props.history.replace('/dashbord')
+            //     }
+            // }
         }
     }
 

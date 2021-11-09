@@ -68,25 +68,41 @@ const Register = (props) => {
         setDirty(dirtyData)
         validate()
         if (isValid()) {
-            let response = await fetch('http://localhost:5000/users', {
-                method: "POST",
-                body: JSON.stringify({
-                    username: state.username,
-                    password: state.password,
-                    confirm: state.confirm,
-                    email: state.email
-                }),
-                headers: { "Content-type": "application/json" }
-            })
-            if (response.ok) {
-                let responseBody = await response.json()
-                console.log(responseBody)
-                dispatch(signIn({
-                    currentUser: responseBody.username,
-                    userId: responseBody.id
-                }))
-                props.history.replace('/dashbord')
+            let id = Math.floor(Math.random() * 1000000000)
+            let responseBody = {
+                id: id,
+                username: state.username,
+                password: state.password,
+                confirm: state.confirm,
+                email: state.email
             }
+            let items=localStorage.getItem('users')? JSON.parse(localStorage.getItem('users')): []
+            items.push(responseBody)
+            localStorage.setItem('users', JSON.stringify(items))
+            dispatch(signIn({
+                currentUser: responseBody.username,
+                userId: responseBody.id
+            }))
+            props.history.replace('/dashbord')
+            // let response = await fetch('http://localhost:5000/users', {
+            //     method: "POST",
+            //     body: JSON.stringify({
+            //         username: state.username,
+            //         password: state.password,
+            //         confirm: state.confirm,
+            //         email: state.email
+            //     }),
+            //     headers: { "Content-type": "application/json" }
+            // })
+            // if (response.ok) {
+            //     let responseBody = await response.json()
+            //     console.log(responseBody)
+            //     dispatch(signIn({
+            //         currentUser: responseBody.username,
+            //         userId: responseBody.id
+            //     }))
+            //     props.history.replace('/dashbord')
+            // }
         }
     }
 
