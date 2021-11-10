@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "amir",
+      "password": "123",
+      "confirm": "123",
+      "email": "amir@gmail.com"
+    },
+    {
+      "username": "reza",
+      "password": "123",
+      "confirm": "123",
+      "email": "reza@gmail.com",
+      "id": 2
+    },
+    {
+      "username": "ahmad",
+      "password": "123",
+      "confirm": "123",
+      "email": "ahmad@gmail.com",
+      "id": 3
+    }
+  ],
+  "contacts": [
+    {
+      "userId": 1,
+      "name": "امیرحسین بساوند",
+      "number": "9567435",
+      "id": 2
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "name": " bra doctorali",
+      "number": "95677452"
+    },
+    {
+      "userId": 1,
+      "name": "sdftgs",
+      "number": "er2re",
+      "id": 5
+    }
+  ]
+}
